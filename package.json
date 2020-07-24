@@ -1,0 +1,28 @@
+{
+  "name": "volun-api",
+  "version": "1.0.0",
+  "description": "Volun Api Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lelexg/volun-api.git"
+  },
+  "author": "Alexandre Godoy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lelexg/volun-api/issues"
+  },
+  "homepage": "https://github.com/Lelexg/volun-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
