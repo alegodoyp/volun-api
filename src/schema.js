@@ -6,10 +6,12 @@ const typeDefs = `
 
 type Query {
   users: [User]
+  causes: [Cause]
 }
 
 type Mutation {
   createUser(user: UserInput): User
+  createCause(description: String): Cause
 }
 
 type User {
@@ -30,6 +32,11 @@ input UserInput {
   lastname: String!
   email: String!
   phone: String
+  interests: [Connector]
+}
+
+input Connector {
+  id: Int
 }
 `
 
@@ -37,28 +44,36 @@ input UserInput {
 const resolvers = {
   Query: {
     users: (parent, args, ctx) => {
-      return ctx.prisma.user.findMany()
+      return ctx.prisma.user.findMany({
+        include: {
+          interests: true
+        }
+      })
+    },
+    causes: (parent, args, ctx) => {
+      return ctx.prisma.cause.findMany()
     },
   },
   Mutation: {
     createUser: (parent, args, ctx) => {
       return ctx.prisma.user.create({
         data: {
-          firstname: args.firstname,
-          lastname: args.lastname,
-          email: args.email,
-          phone: args.phone,
+          firstname: args.user.firstname,
+          lastname: args.user.lastname,
+          email: args.user.email,
+          phone: args.user.phone,
+          interests: {
+            connect: args.user.interests
+          }
         },
       })
     },
-  },
-  User: {
-    interests: (parent, args, ctx) => {
-      return ctx.prisma.user
-        .findOne({
-          where: { id: parent.id },
-        })
-        .cause()
+    createCause: (parent, args, ctx) => {
+      return ctx.prisma.cause.create({
+        data: {
+          description: args.description
+        },
+      })
     },
   },
 }
