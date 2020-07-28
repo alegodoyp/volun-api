@@ -30,8 +30,7 @@
   "homepage": "https://github.com/Lelexg/volun-api#readme",
   "devDependencies": {
     "@prisma/cli": "^2.3.0",
-    "nodemon": "^2.0.4",
-    "netlify-cli": "2.40.0"
+    "nodemon": "^2.0.4"
   },
   "prettier": {
     "singleQuote": true,
