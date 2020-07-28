@@ -25,6 +25,6 @@ server.applyMiddleware({
   cors: false // disbles default apollo-server cors and uses the express middleware cors in-lieu. 
 })
 
-app.listen({ port: 4000 }, () => {
-  console.log(`🚀 Server ready at https://localhost:4000`)
+app.listen( 4000, () => {
+  console.log(`🚀 Server ready at localhost:4000`)
 });
