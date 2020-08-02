@@ -2,7 +2,7 @@ const { Prisma } = require('prisma-binding');
 const { ApolloServer } = require('apollo-server-express');
 const { schema } = require('./schema');
 const { createContext } = require('./context');
-const express = require('express');
+const express = require('express')
 const cors = require('cors');
 
 const server = new ApolloServer({ 
@@ -26,5 +26,5 @@ server.applyMiddleware({
 })
 
 app.listen( 4000, () => {
-  console.log(`🚀 Server ready at localhost:4000`)
+  console.log(`🚀 Server ready at http://localhost:4000`)
 });
