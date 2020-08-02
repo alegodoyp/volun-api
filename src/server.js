@@ -7,7 +7,9 @@ const cors = require('cors');
 
 const server = new ApolloServer({ 
   schema, 
-  context: createContext 
+  context: createContext,
+  introspection: true,
+  playground: true,
 });
 
 const app = express();
