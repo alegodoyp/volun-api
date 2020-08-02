@@ -1,4 +1,4 @@
 [build]
  Command = "yarn build"
  Functions = "lambda"
- Publish = "public"
+ Publish = "src"
