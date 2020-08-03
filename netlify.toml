@@ -1,5 +1,4 @@
 [build]
- base = "volun-api/"
  Command = "yarn build"
  Functions = "lambda/"
  Publish = "src/"
