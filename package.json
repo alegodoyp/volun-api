@@ -4,10 +4,10 @@
   "description": "Backend Service for Project Volun",
   "main": "server.js",
   "scripts": {
-    "serve": "netlify-lambda serve server",
+    "serve": "netlify-lambda serve src/server",
     "build": "netlify-lambda build server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server"
   },
   "dependencies": {
     "@nexus/schema": "0.14.0",
