@@ -1,4 +1,3 @@
-const { Prisma } = require('prisma-binding');
 const { ApolloServer } = require('apollo-server-express');
 const { schema } = require('./schema');
 const { createContext } = require('./context');
@@ -12,23 +11,22 @@ const server = new ApolloServer({
     introspection: true,
 })
 
-// const app = express();
+const app = express();
 
-// var corsOptions = {
-//   origin: 'http://localhost:3000',
-//   credentials: true // includes headers for the requests to backend
-// }
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true // includes headers for the requests to backend
+}
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-// server.applyMiddleware({
-//   app,
-//   path: '/',
-//   cors: false // disbles default apollo-server cors and uses the express middleware cors in-lieu. 
-// })
+server.applyMiddleware({
+  app,
+  path: '/',
+  cors: false // disbles default apollo-server cors and uses the express middleware cors in-lieu. 
+})
 
-// app.listen( 4000, () => {
-//   console.log(`🚀 Server ready at http://localhost:4000`)
-// });
+app.listen( 4000, () => {
+  console.log(`🚀 Server ready at http://localhost:4000`)
+});
   
-export default server.createHandler({ path: '/graphql' })

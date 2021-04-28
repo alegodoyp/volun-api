@@ -1,6 +1,0 @@
-datamodel: datamodel.prisma
-endpoint: https://volun-api.vercel.app
-
-generate:
-  - generator: javascript-client
-    output: ./prisma-client/
