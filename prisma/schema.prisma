@@ -186,7 +186,7 @@ model Tag {
 }
 
 model User {
-  email        String
+  email        String         @unique
   firstname    String
   id           Int            @id @default(autoincrement())
   lastname     String

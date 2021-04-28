@@ -176,14 +176,12 @@ type Favorite {
 
 
 input UserInput {
-  ID: String
-  firstname: String!
-  lastname: String!
-  email: String!
-  phone: String
-  bio: String
-  document: String
-  interests: [Connector]
+  firstname: String
+  lastname: String
+  email: String
+  phone: String!
+  bio: String!
+  document: String!
 }
 
 input LocalityInput {
@@ -213,12 +211,14 @@ const resolvers = {
   },
   Mutation: {
     createUser: (parent, args, ctx) => {
-      return ctx.prisma.userupsert({
+      return ctx.prisma.user.upsert({
         where: {
           email: args.user.email,
         },
         update: {
-          email: args.user.email,
+          phone: args.user.phone,
+          bio: args.user.bio,
+          document: args.user.document
         },
         create: {
           firstname: args.user.firstname,
