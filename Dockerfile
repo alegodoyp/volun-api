@@ -18,4 +18,4 @@ RUN npx prisma generate
 EXPOSE 4000
 
 # Running the app
-CMD "npm" "run" "dev"
+CMD "npm" "run" "build"

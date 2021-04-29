@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
     "@prisma/client": "^2.21.2",
+    "@saeris/apollo-server-vercel": "^0.4.0",
     "@types/node": "^15.0.1",
     "apollo-server-express": "^2.23.0",
     "graphql": "^15.5.0",
