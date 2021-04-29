@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  volunapi:
+    image: volunapi
+    env_file:
+     - ./.env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4000:4000
