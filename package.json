@@ -1,0 +1,37 @@
+{
+  "name": "volun-api",
+  "version": "1.0.0",
+  "description": "Backend Service for Project Volun",
+  "scripts": {
+    "build": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@prisma/client": "^2.21.2",
+    "@types/node": "^15.0.1",
+    "apollo-server-micro": "^2.23.0",
+    "graphql": "^15.5.0",
+    "nodemon": "^2.0.7",
+    "prisma": "^2.21.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "repository": "git+https://github.com/Lelexg/volun-api.git",
+  "keywords": [],
+  "author": "Alexandre <lelex.g@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lelexg/volun-api/issues"
+  },
+  "homepage": "https://github.com/Lelexg/volun-api#readme",
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  },
+  "engines": {
+    "node": "^12.16.1"
+  }
+}
