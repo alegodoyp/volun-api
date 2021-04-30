@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend Service for Project Volun",
   "scripts": {
-    "build": "node src/server.js",
+    "build": "npx micro src/server.js",
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "@types/node": "^15.0.1",
     "apollo-server-micro": "^2.23.0",
     "graphql": "^15.5.0",
+    "micro-cors": "^0.1.1",
     "nodemon": "^2.0.7",
     "prisma": "^2.21.2",
     "ts-node": "^9.1.1",

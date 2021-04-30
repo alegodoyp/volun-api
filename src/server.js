@@ -1,6 +1,7 @@
 const { ApolloServer } = require('apollo-server-micro');
 const { schema } = require('./schema');
 const { createContext } = require('./context');
+const cors = require('micro-cors')(); 
 // const express = require('express')
 // const cors = require('cors');
 
@@ -30,7 +31,7 @@ const server = new ApolloServer({
 //   console.log(`🚀 Server ready at http://localhost:4000`)
 // });
 
-module.exports = apolloServer.start().then(() => {
-  const handler = apolloServer.createHandler();
+module.exports = server.start().then(() => {
+  const handler = server.createHandler();
   return cors((req, res) => req.method === 'OPTIONS' ? res.end() : handler(req, res))
 });
