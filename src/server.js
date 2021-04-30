@@ -30,12 +30,7 @@ const server = new ApolloServer({
 //   console.log(`🚀 Server ready at http://localhost:4000`)
 // });
 
-module.exports = server.createHandler({
-  path: '/api/graphql',
+module.exports = apolloServer.start().then(() => {
+  const handler = apolloServer.createHandler();
+  return cors((req, res) => req.method === 'OPTIONS' ? res.end() : handler(req, res))
 });
-
-module.exports.config = {
-  api: {
-    bodyParser: false,
-  },
-};
