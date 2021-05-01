@@ -4,7 +4,7 @@ generator client {
 
 datasource postgresql {
   provider = "postgresql"
-  url      = "postgres://postgres:postgres-volun@volun-db.cqhov1pih3vk.sa-east-1.rds.amazonaws.com:5432/volun-db"
+  url      = env("DATABASE_URL")
 }
 
 model Ability {
