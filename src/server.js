@@ -13,12 +13,7 @@ const server = new ApolloServer({
 
 const app = express();
 
-var corsOptions = {
-  origin: 'http://localhost:3000',
-  credentials: true // includes headers for the requests to backend
-}
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 server.applyMiddleware({
   app,
@@ -26,8 +21,8 @@ server.applyMiddleware({
   cors: false // disbles default apollo-server cors and uses the express middleware cors in-lieu. 
 })
 
-app.listen( 4000, () => {
-  console.log(`🚀 Server ready at http://localhost:4000`)
+app.listen( 443, () => {
+  console.log(`🚀 Server ready at port 443`)
 });
 
   
