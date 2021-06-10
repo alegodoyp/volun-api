@@ -1,9 +1,8 @@
-const { ApolloServer } = require('apollo-server-micro');
+const { ApolloServer } = require('apollo-server-express');
 const { schema } = require('./schema');
 const { createContext } = require('./context');
-const cors = require('micro-cors')(); 
-// const express = require('express')
-// const cors = require('cors');
+const express = require('express')
+const cors = require('cors');
 
 const server = new ApolloServer({
     schema,
@@ -23,5 +22,5 @@ server.applyMiddleware({
 })
 
 app.listen( 443, () => {
-  console.log(`🚀 Server ready at port 443`)
+  console.log(`ðŸš€ Server ready at port 443`)
 });
